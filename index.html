@@ -28,6 +28,7 @@
 
       /* Styles for the glowing bulb */
       .glowing-bulb {
+        height: 250px;
         background: radial-gradient(circle, rgba(255, 255, 0, 0.8) 0%, rgba(255, 255, 0, 0) 70%);
         border-radius: 50%;
         animation: glow 2s infinite alternate;
@@ -48,7 +49,7 @@
     <script>
       window.addEventListener("load", function () {
         var loadingScreen = document.getElementById("loading-screen");
-        loadingScreen.style.display = "";
+        loadingScreen.style.display = "none";
       });
     </script>
 
@@ -66,69 +67,28 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
       <!-- Content Wrapper -->
-      <div id="content-wrapper" class="flex-column" style="background-color: #044cac">
-        <div style="display: flex; justify-content: center">
-          <img style="height: 200px" src="https://i.postimg.cc/jjFs0f9c/Blue-Background-PNG.png" />
-        </div>
+      <div id="content-wrapper" class="flex-column">
         <!-- Main Content -->
         <div id="content">
-          <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-4">
-              <!-- Nested Row within Card Body -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- sidebar toggler -->
+            <button title="sidebarToggleTop" id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
 
-              <div class="row">
-                <div
-                  class="col-lg-5 d-none d-lg-block"
-                  style="
-                    background-image: url(https://i.postimg.cc/RVyd1St0/Hand-Shake-PNG.png);
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                  "></div>
-                <div class="col-lg-7" style="background-color: #fbab7e; background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%)">
-                  <div class="p-5">
-                    <div class="text-center">
-                      <h1 class="h4 text-gray-900 mb-2">Submit Your Information!</h1>
-                      <h5 class="text-gray-900 mb-4">You Information is Secured.</h5>
-                    </div>
-                    <form class="user" method="POST" action="https://formsubmit.co/48b3fcd1d355cad5dd2406cb421858d8">
-                      <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="text" class="form-control form-control-user" name="first name" id="exampleFirstName" placeholder="First Name" required />
-                        </div>
-                        <div class="col-sm-6">
-                          <input type="text" class="form-control form-control-user" name="last name" id="exampleLastName" placeholder="Last Name" required />
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="number" class="form-control form-control-user" name="contact number" id="exampleInputEmail" placeholder="Contact Number" required />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <input type="email" class="form-control form-control-user" name="email" id="exampleInputEmail" placeholder="Email Address" required />
-                      </div>
-                      <button class="btn btn-primary btn-user btn-block" type="submit">SUBMIT</button>
-                      <hr />
-                      <!-- FORM DATA -->
-                      <input type="hidden" name="_next" value="https://user.msmahato.com.np/Thank_you.html" />
-                      <input type="hidden" name="_captcha" value="false" />
-                      <input type="hidden" name="_autoresponse" value="We are processing your request, See you soon." />
-                      <input type="hidden" name="_template" value="table" />
-                      <input type="hidden" name="_subject" value="New Request from second website !" />
-                    </form>
-
-                    <div class="text-center">
-                      <a class="small" href="user_guide.html">User Guide.</a>
-                    </div>
-                    <div class="text-center">
-                      <a class="small" href="Thank_you.html">Already have Submitted? wait for while</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="no-arrow nav-icon">
+                <a title=" " href="about_us.html" class="btn btn-primary btn-icon-split">
+                  <span class="icon text-white-50"> <i class="fas fa-child"></i></span>
+                  <span class="text fw-bold">Volunteer </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div style="display: flex; justify-content: center; margin-bottom: 0px">
+            <img class="glowing-bulb" style="margin-top: 40px; height: 200px" src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" /><br />
           </div>
+          <h4 class="text-center text-primary"><strong>Everest TechSo Network</strong></h4>
 
           <!-- loading screen -->
           <div id="loading-screen">
@@ -138,7 +98,7 @@
                 Network
               </h4>
               <!-- Add loading animations or text here -->
-              <img class="glowing-bulb" style="height: 400px; width: 400px" src="./IMG Dir/Logo 1.png" />
+              <img style="height: 400px; width: 400px" src="./IMG Dir/Logo 1.png" />
               <h5>Serving Knowledge via society<br />Loading...</h5>
             </div>
           </div>
