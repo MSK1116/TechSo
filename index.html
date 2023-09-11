@@ -59,6 +59,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="Style Dir/style1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- END OF STYLE DIR-->
   </head>
@@ -71,16 +74,11 @@
         <!-- Main Content -->
         <div id="content">
           <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <!-- sidebar toggler -->
-            <button title="sidebarToggleTop" id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-              <i class="fa fa-bars"></i>
-            </button>
-
             <ul class="navbar-nav ml-auto">
               <li class="no-arrow nav-icon">
-                <a title=" " href="about_us.html" class="btn btn-primary btn-icon-split">
-                  <span class="icon text-white-50"> <i class="fas fa-child"></i></span>
-                  <span class="text fw-bold">Volunteer </span>
+                <a title="icon " href="hhtps://msmahato.com.np" class="btn btn-primary btn-icon-split">
+                  <span class="icon text-white-50"> <i class="fas fa-book"></i></span>
+                  <span class="text fw-bold">Mold Skill</span>
                 </a>
               </li>
             </ul>
@@ -89,6 +87,18 @@
             <img class="glowing-bulb" style="margin-top: 40px; height: 200px" src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" /><br />
           </div>
           <h4 class="text-center text-primary"><strong>Everest TechSo Network</strong></h4>
+          <a
+            title="icon"
+            href=""
+            class="btn btn-danger btn-icon-split"
+            style="display: flex; justify-content: center; align-items: center; width: 30%; height: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto">
+            <span class="icon"> <i class="fas fa-key"></i></span>
+            <span class="text fw-bold"> Register Now</span>
+          </a>
+
+          <div card="card " id="post1">
+            <img src="./IMG Dir/Debugging Competition.png" />
+          </div>
 
           <!-- loading screen -->
           <div id="loading-screen">
@@ -126,6 +136,13 @@
     </a>
 
     <!-- Scripted file-->
+    <script>
+      $(document).ready(function () {
+        $("#ask").dialog({
+          autoOpen: true, // Dialog will open automatically on page load
+        });
+      });
+    </script>
     <!-- Asked by console for the jquery requirement -->
     <script src="./Script Dir/script.js"></script>
   </body>
