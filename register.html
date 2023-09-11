@@ -49,12 +49,13 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
       <!-- Content Wrapper -->
-      <div id="content-wrapper" class="flex-column" style="background-color: #044cac">
-        <div style="display: flex; justify-content: center">
-          <img style="height: 200px" src="https://i.postimg.cc/jjFs0f9c/Blue-Background-PNG.png" />
-        </div>
+      <div id="content-wrapper">
         <!-- Main Content -->
         <div id="content">
+          <div style="display: flex; justify-content: center">
+            <img style="height: 200px" src="https://i.postimg.cc/pTwCmnGG/White-Background-PNG.png" />
+            <img style="height: 200px" src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" />
+          </div>
           <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-4">
               <!-- Nested Row within Card Body -->
@@ -63,16 +64,17 @@
                 <div
                   class="col-lg-5 d-none d-lg-block"
                   style="
-                    background-image: url(https://i.postimg.cc/RVyd1St0/Hand-Shake-PNG.png);
+                    background-image: url(https://i.postimg.cc/j5Tpdd52/3rd-timeline-red-PNG.png);
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
                   "></div>
-                <div class="col-lg-7" style="background-color: #fbab7e; background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%)">
+                <div class="col-lg-7" style="background-image: url(https://i.postimg.cc/mgTjmhkq/Sc-Fi-2.jpg)">
                   <div class="p-5">
                     <div class="text-center">
-                      <h1 class="h4 text-gray-900 mb-2">Submit Your Information!</h1>
-                      <h5 class="text-gray-900 mb-4">You Information is Secured.</h5>
+                      <h1 class="h4 text-white-900 mb-2">Participate Now!</h1>
+                      <div class="text-info text-center fw-bold" id="timeLeft"></div>
+                      <br />
                     </div>
                     <form class="user" method="POST" action="https://formsubmit.co/48b3fcd1d355cad5dd2406cb421858d8">
                       <div class="form-group row">
@@ -83,14 +85,23 @@
                           <input type="text" class="form-control form-control-user" name="last name" id="exampleLastName" placeholder="Last Name" required />
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="number" class="form-control form-control-user" name="contact number" id="exampleInputEmail" placeholder="Contact Number" required />
-                        </div>
-                      </div>
                       <div class="form-group">
                         <input type="email" class="form-control form-control-user" name="email" id="exampleInputEmail" placeholder="Email Address" required />
                       </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input type="text" class="form-control form-control-user" name="college" id="exampleInputEmail" placeholder="Name of Your College" required />
+                        </div>
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <select class="form-control" title="Your Grade">
+                            <option disabled selected class="text-warning">Select your grade</option>
+                            <option class="text-info">10</option>
+                            <option class="text-info">XI</option>
+                            <option class="text-info">XII</option>
+                          </select>
+                        </div>
+                      </div>
+
                       <button class="btn btn-primary btn-user btn-block" type="submit">SUBMIT</button>
                       <hr />
                       <!-- FORM DATA -->
@@ -120,7 +131,7 @@
     <footer class="sticky-footer">
       <div>
         <p class="copyright">
-          MOld SKILL <br />
+          Sole property of MOld SKILL any query and suggestion can be sumbmitted through main website <br />
           Contact: contact@msmahato.com.np <br />
           Adress: Bhaktapur-Nepal <br />
           Copyright &copy;(2023-025)
@@ -136,6 +147,28 @@
     </a>
 
     <!-- Scripted file-->
+    <script>
+      // Set the target date (replace with your desired date)
+      const targetDate = new Date("2023-09-18T12:00:00");
+
+      // Function to calculate and display the time left
+      function calculateTimeLeft() {
+        const currentDate = new Date();
+        const timeDifference = targetDate - currentDate;
+
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("timeLeft").innerHTML = `Time Left: ${days} days ${hours} hours ${minutes} minutes`;
+      }
+
+      // Call the function to initially display the time left
+      calculateTimeLeft();
+
+      // Update the time left every second
+      setInterval(calculateTimeLeft, 1000);
+    </script>
     <!-- Asked by console for the jquery requirement -->
   </body>
 </html>
