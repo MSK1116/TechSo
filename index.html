@@ -59,6 +59,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="Style Dir/style1.css" rel="stylesheet" />
+    <link href="Style Dir/database.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -96,9 +97,92 @@
             style="display: flex; justify-content: center; align-items: center; width: 30%; height: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto">
             <span class="text fw-bold"> Register Now</span>
           </a>
+
           <div class="text-warning text-center fw-bold" id="timeLeft"></div>
           <div card="card " id="post1">
             <img src="./IMG Dir/Debugging Competition.png" />
+          </div>
+
+          <div class="card-body">
+            <div class="pt-4 pb-2">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Participant</h6>
+                  <h6>Last Updated: - 8:30 PM (9/13/2023)</h6>
+                </div>
+                <div class="card-body">
+                  <div class="">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Grade</th>
+                          <th>College</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>Aakash Mandal</td>
+                          <td>XII</td>
+                          <td>VS Niketan</td>
+                        </tr>
+                        <tr>
+                          <td>Binit Yadav</td>
+                          <td>XII</td>
+                          <td>Global College</td>
+                        </tr>
+                        <tr>
+                          <td>Nirajan Dhakal</td>
+                          <td>XII</td>
+                          <td>CCRC</td>
+                        </tr>
+                        <tr>
+                          <td>Dhiraj Sah</td>
+                          <td>XII</td>
+                          <td>Kendriya Vidyalaya</td>
+                        </tr>
+                        <tr>
+                          <td>Mohammad Shad Raien</td>
+                          <td>XII</td>
+                          <td>VS Niketan</td>
+                        </tr>
+                        <tr>
+                          <td>Bikash Mandal</td>
+                          <td>XII</td>
+                          <td>Birdgewater International College</td>
+                        </tr>
+                        <tr>
+                          <td>Nabin Yadav</td>
+                          <td>XII</td>
+                          <td>VS Niketan</td>
+                        </tr>
+                        <tr>
+                          <td>Anand Ray</td>
+                          <td>XII</td>
+                          <td>VS Niketan</td>
+                        </tr>
+                        <tr>
+                          <td>Aaditya Kumar</td>
+                          <td>X</td>
+                          <td>Damodar Academy</td>
+                        </tr>
+                        <tr>
+                          <td>Bibek Mandal</td>
+                          <td>XII</td>
+                          <td>Rajarshi Janak Campus</td>
+                        </tr>
+                        <tr>
+                          <td>Bibek Mandal</td>
+                          <td>XII</td>
+                          <td>Rajarshi Janak Campus</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- loading screen -->
@@ -168,5 +252,8 @@
     </script>
     <!-- Asked by console for the jquery requirement -->
     <script src="./Script Dir/script.js"></script>
+    <script src="./Script Dir/database.js"></script>
+    <script src="./Script Dir/database2.js"></script>
+    <script src="./Script Dir/database3.js"></script>
   </body>
 </html>
