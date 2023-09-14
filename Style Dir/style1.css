@@ -10267,6 +10267,7 @@ body.sidebar-toggled footer.sticky-footer {
   margin-bottom: 3px;
   width: 90%;
   margin: auto;
+  padding: 2px;
 }
 
 /* Center the image within the container */
