@@ -77,13 +77,18 @@
           <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             <ul class="navbar-nav ml-auto">
               <li class="no-arrow nav-icon">
-                <a title="icon " href="https://msmahato.com.np" class="btn mr-4 btn-primary btn-icon-split">
+                <a title="icon " href="https://msmahato.com.np" class="btn mr-3 btn-primary btn-icon-split">
                   <span class="icon text-white-50"> <i class="fas fa-book"></i></span>
                   <span class="text fw-bold">Mold Skill</span>
                 </a>
               </li>
               <li class="no-arrow nav-icon">
-                <a title="icon " href="./register.html" class="btn btn-info btn-icon-split">
+                <button title="icon " onclick="fun1()" class="btn btn-info mr-3 btn-icon-split">
+                  <span class="text fw-bold">Login</span>
+                </button>
+              </li>
+              <li class="no-arrow nav-icon">
+                <a href="./register.html" class="btn btn-info btn-icon-split">
                   <span class="text fw-bold">Register Now!</span>
                 </a>
               </li>
@@ -110,6 +115,14 @@
               <span class="text fw-bold"> Register Now</span>
             </a>
             <div class="text-warning text-center fw-bold" id="timeLeft"></div>
+          </div>
+          <div class="rules-container">
+            <h2 class="text-primary fw-bold">You Should Know!</h2>
+            <ul>
+              <li>The competition will be held fully online.</li>
+              <li>All the problems will be based on the course of grades X, XI & XII</li>
+              <li>Each participant will get their ID and Password through the mail, which will be used to log in web</li>
+            </ul>
           </div>
           <div class="card-body">
             <div class="pt-4 pb-2">
@@ -243,7 +256,7 @@
     </script>
     <script>
       // Set the target date (replace with your desired date)
-      const targetDate = new Date("2023-09-18T12:00:00");
+      const targetDate = new Date("2023-09-18T17:30:00");
 
       // Function to calculate and display the time left
       function calculateTimeLeft() {
@@ -268,5 +281,10 @@
     <script src="./Script Dir/database.js"></script>
     <script src="./Script Dir/database2.js"></script>
     <script src="./Script Dir/database3.js"></script>
+    <script>
+      function fun1() {
+        alert("After Program Starts you can login from here. Thank You");
+      }
+    </script>
   </body>
 </html>
