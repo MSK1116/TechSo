@@ -121,19 +121,10 @@
               <!-- Container 2 -->
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold bt-sm text-warning">SET-2</h6>
-                <div class="dropdown no-arrow">
-                  <a title=" " class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                    <div class="dropdown-header">Some Links</div>
-                    <a title=" " class="dropdown-item" href="https://drive.google.com/file/d/1mu4P31Z-Ol9Fj8Hp0LJQ5snquszDK5ve/preview" target="_blank">Open in Google Drive</a>
-                  </div>
-                </div>
               </div>
               <!-- Card Body -->
               <div class="card-body">
-                <a title=" " target="_blank" href="University-Physics-13edt.html">
+                <a title=" " href="../set/set2.html">
                   <div class="chart-area container2-tb"></div>
                 </a>
               </div>
@@ -144,19 +135,10 @@
               <!-- Container 2 -->
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold bt-sm text-warning">SET-3</h6>
-                <div class="dropdown no-arrow">
-                  <a title=" " class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                    <div class="dropdown-header">Some Links</div>
-                    <a title=" " class="dropdown-item" href="https://drive.google.com/file/d/1mu4P31Z-Ol9Fj8Hp0LJQ5snquszDK5ve/preview" target="_blank">Open in Google Drive</a>
-                  </div>
-                </div>
               </div>
               <!-- Card Body -->
               <div class="card-body">
-                <a title=" " target="_blank" href="University-Physics-13edt.html">
+                <a title=" " href="../set/set3.html">
                   <div class="chart-area container2-tb"></div>
                 </a>
               </div>
@@ -167,19 +149,10 @@
               <!-- Container 2 -->
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold bt-sm text-warning">SET-4</h6>
-                <div class="dropdown no-arrow">
-                  <a title=" " class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                    <div class="dropdown-header">Some Links</div>
-                    <a title=" " class="dropdown-item" href="https://drive.google.com/file/d/1mu4P31Z-Ol9Fj8Hp0LJQ5snquszDK5ve/preview" target="_blank">Open in Google Drive</a>
-                  </div>
-                </div>
               </div>
               <!-- Card Body -->
               <div class="card-body">
-                <a title=" " target="_blank" href="University-Physics-13edt.html">
+                <a title=" " href="../set/set4.html">
                   <div class="chart-area container2-tb"></div>
                 </a>
               </div>
@@ -218,6 +191,9 @@
     </a>
     <script src="../Script Dir/prg.js"></script>
     <script>
+      if (username == null || name == null) {
+        location.href = "../login.html";
+      }
       document.getElementById("uName").innerHTML = "Welcome, " + name + "(" + username + ")<br>";
 
       if (!localStorage.getItem("pageLoaded")) {

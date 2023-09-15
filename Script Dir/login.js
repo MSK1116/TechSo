@@ -17,6 +17,7 @@ loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
+  document.getElementById("tolog").style.display = "block";
 
   // Reference to the "users" node in the Realtime Database
   const usersRef = firebase.database().ref("user-try");
@@ -34,15 +35,17 @@ loginForm.addEventListener("submit", function (e) {
         if (user.password === password) {
           // Password is correct
           messageDiv.innerHTML = `[Er-HIT] You will be allowed after the program starts, ${user.name}!`;
-          sessionStorage.setItem("username", user.username);
-          sessionStorage.setItem("password", user.password);
-          sessionStorage.setItem("name", user.name);
+          sessionStorage.setItem("username1", user.username);
+          sessionStorage.setItem("password1", user.password);
+          sessionStorage.setItem("name1", user.name);
           location.href = "../set/set.html";
         } else {
           messageDiv.innerHTML = "[Er-PW-Mis] You will be allowed after the program starts";
+          document.getElementById("tolog").style.display = "none";
         }
       } else {
         messageDiv.innerHTML = "[Er-N-DAT] You will be allowed after the program starts";
+        document.getElementById("tolog").style.display = "none";
       }
     });
 });
