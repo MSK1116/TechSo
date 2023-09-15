@@ -19,7 +19,7 @@ loginForm.addEventListener("submit", function (e) {
   const password = document.getElementById("password").value;
 
   // Reference to the "users" node in the Realtime Database
-  const usersRef = firebase.database().ref("users");
+  const usersRef = firebase.database().ref("user-try");
 
   // Check if the user exists in the database
   usersRef
