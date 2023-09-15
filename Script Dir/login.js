@@ -36,7 +36,7 @@ loginForm.addEventListener("submit", function (e) {
           messageDiv.innerHTML = `[Er-HIT] You will be allowed after the program starts, ${user.name}!`;
           sessionStorage.setItem("username", user.name);
           sessionStorage.setItem("password", user.password);
-          location.href = "./set/set.html";
+          location.href = "../set/set.html";
         } else {
           messageDiv.innerHTML = "[Er-PW-Mis] You will be allowed after the program starts";
         }
