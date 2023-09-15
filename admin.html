@@ -1,0 +1,76 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Interface</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  </head>
+  <body>
+    <h1>Database Admin</h1>
+    <input type="text" id="get1" onkeyup="fun1()" />
+    <form id="admin-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required /><br /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" required /><br /><br />
+      <label for="name">Name:</label>
+      <input type="text" id="name" required /><br /><br />
+      <!-- Add other fields as needed -->
+      <button type="submit">Add User</button>
+    </form>
+    <script>
+      // admin.js
+
+      // Initialize Firebase (same as in login.js)
+      const firebaseConfig = {
+        apiKey: "AIzaSyAhOHX1_eL1X5WO8_q8jRWDqw1WrGOp3ow",
+        authDomain: "techso-6df95.firebaseapp.com",
+        databaseURL: "https://techso-6df95-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "techso-6df95",
+        storageBucket: "techso-6df95.appspot.com",
+        messagingSenderId: "426658672504",
+        appId: "1:426658672504:web:40a40809b8d5a6b15f228d",
+        measurementId: "G-1N6EX23D9F",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Handle the admin form submission
+      const adminForm = document.getElementById("admin-form");
+
+      adminForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const name = document.getElementById("name").value;
+
+        // Reference to the "users" node in the Realtime Database
+        const usersRef = firebase.database().ref("users");
+
+        // Push new user data to the database
+        usersRef.push({
+          username: username,
+          password: password,
+          name: name,
+          // Add other fields as needed
+        });
+
+        // Optionally, you can display a success message or redirect the admin after submission.
+        alert("User added successfully!");
+        // Redirect to another page or perform other actions here
+      });
+      var a = document.getElementById("admin-form");
+      a.style.display = "none";
+
+      function fun1() {
+        var b = document.getElementById("get1");
+        if (b.value == "him123") {
+          a.style.display = "block";
+          b.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
