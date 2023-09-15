@@ -30,18 +30,18 @@ loginForm.addEventListener("submit", function (e) {
 
       if (userData) {
         // User found, check the password
-
         const user = Object.values(userData)[0]; // Assuming usernames are unique
         if (user.password === password) {
           // Password is correct
-          messageDiv.innerHTML = `[Er-HIT]You will be allowed after program starts. ${user.name}!`;
-
-          // Redirect to another page or perform other actions here
+          messageDiv.innerHTML = `[Er-HIT] You will be allowed after the program starts, ${user.name}!`;
+          sessionStorage.setItem("username", user.name);
+          sessionStorage.setItem("password", user.password);
+          location.href = "./set/set.html";
         } else {
-          messageDiv.innerHTML = "[Er-PW-Mis] You will be allowed after program starts";
+          messageDiv.innerHTML = "[Er-PW-Mis] You will be allowed after the program starts";
         }
       } else {
-        messageDiv.innerHTML = "[Er-N-DAT] You will be allowed after program starts ";
+        messageDiv.innerHTML = "[Er-N-DAT] You will be allowed after the program starts";
       }
     });
 });

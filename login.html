@@ -53,7 +53,7 @@
       });
     </script>
 
-    <title>TechSo Network</title>
+    <title>Login-TechSo Network</title>
 
     <!-- STYLE DIR-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -69,8 +69,9 @@
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     <style>
       #particles-js {
-        bottom: 0px;
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         background-color: #044cac;
@@ -78,35 +79,33 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50% 50%;
+        overflow: hidden;
       }
     </style>
     <!-- END OF STYLE DIR-->
   </head>
 
-  <body style="z-index: 5">
-    <div id="particles-js">
-      <div class="row justify-content-center">
-        <div class="col-xl-5 col-lg-12 col-md-9">
-          <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-              <!-- Nested Row within Card Body -->
-
-              <div class="col-lg-46">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                  </div>
-                  <form id="login-form" class="user">
-                    <div class="form-group">
-                      <input type="text" id="username" class="form-control form-control-user" placeholder="Enter username..." required />
-                    </div>
-                    <div class="form-group">
-                      <input type="password" id="password" class="form-control form-control-user" placeholder="Password" required />
-                    </div>
-                    <div id="message"></div>
-                    <button class="btn btn-primary btn-user btn-block" type="submit">Login</button>
-                  </form>
+  <body id="page-top">
+    <div id="particles-js" class="row justify-content-center">
+      <div class="col-xl-5 col-lg-1 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="col-lg-46">
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Login</h1>
                 </div>
+                <form id="login-form" class="user">
+                  <div class="form-group">
+                    <input type="text" id="username" class="form-control form-control-user" value="1" placeholder="Enter username..." required />
+                  </div>
+                  <div class="form-group">
+                    <input type="password" id="password" class="form-control form-control-user" value="1" placeholder="Password" required />
+                  </div>
+                  <div id="message"></div>
+                  <button class="btn btn-primary btn-user btn-block" type="submit">Login</button>
+                </form>
+                <h6 class="text-center mt-4 text-primary">You can only login after program starts</h6>
               </div>
             </div>
           </div>
@@ -126,7 +125,7 @@
 
     <script src="./Script Dir/login.js"></script>
     <script>
-      confirm("Login After program starts");
+      sessionStorage.clear();
       particlesJS("particles-js", {
         particles: {
           number: {
