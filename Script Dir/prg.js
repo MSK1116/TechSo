@@ -56,7 +56,7 @@ function q1() {
                       const dataToPush = {
                         set: s,
                         al1: txtar,
-                        index: 1, // Replace with the index value you want to push
+                        index: 0, // Replace with the index value you want to push
                       };
                       userRef
                         .child(userKey)
@@ -351,9 +351,13 @@ function startTimer() {
 updateTimerDisplay();
 window.addEventListener("load", startTimer);
 
-const textarea = document.querySelector("textarea");
+// Get all textarea elements on the page
+const textareas = document.querySelectorAll("textarea");
 
-textarea.addEventListener("paste", function (e) {
-  e.preventDefault();
-  confirm("Only editing & writing is allowed");
+// Loop through each textarea and add the event listener
+textareas.forEach(function (textarea) {
+  textarea.addEventListener("paste", function (e) {
+    e.preventDefault();
+    confirm("Only editing & writing is allowed");
+  });
 });

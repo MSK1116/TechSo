@@ -10299,3 +10299,8 @@ li:hover {
   background-color: #f2f2f2;
   cursor: pointer;
 }
+
+#txtar,#txtar2,#txtar3,#txtar4,#txtar5{
+  height: 200px;
+
+}
