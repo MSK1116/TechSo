@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="By Student for Student! We are open to everyone, join us now" />
     <link rel="icon" type="image/x-icon" href="../IMG Dir/Logo 1.png" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
     <style>
       #loading-screen {
@@ -81,7 +83,7 @@
       <div id="content-wrapper" class="flex-column">
         <!-- Main Content -->
 
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <!-- <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
           <ul class="navbar-nav ml-auto">
             <li class="no-arrow nav-icon">
               <a title="icon " href="https://msmahato.com.np" class="btn mr-3 btn-primary btn-icon-split">
@@ -90,7 +92,7 @@
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> -->
         <div style="display: flex; justify-content: center; margin-bottom: 0px">
           <img class="glowing-bulb" style="margin-top: 40px; height: 200px" src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" /><br />
         </div>
@@ -101,7 +103,7 @@
         <h5 class="text-center text-info">Before Entering to the test, let's take a moment to understand what you should do and what you should avoid.</h5>
         <p class="text-center text-info">Read it at bottom</p>
 
-        <div class="row d-flex f container-fluid p-4">
+        <div class="row d-flex container-fluid p-4">
           <div class="col-xl-3 margin-top col-lg-4">
             <div class="card shadow mb-4">
               <!-- Container 2 -->
@@ -191,24 +193,26 @@
     </a>
     <script src="../Script Dir/prg.js"></script>
     <script>
-      if (username == null || name == null) {
-        location.href = "../login.html";
-      }
       document.getElementById("uName").innerHTML = "Welcome, " + name + "(" + username + ")<br>";
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("pageLoaded")) {
+          // Set a flag in localStorage to indicate that the page has been loaded
+          localStorage.setItem("pageLoaded", "true");
+        } else {
+          // Clear data in sessionStorage
+          sessionStorage.clear();
 
-      if (!localStorage.getItem("pageLoaded")) {
-        // Set a flag in localStorage to indicate that the page has been loaded
-        localStorage.setItem("pageLoaded", "true");
-      } else {
-        // Clear data in sessionStorage
-        sessionStorage.clear();
+          // Remove the flag in localStorage
+          localStorage.removeItem("pageLoaded");
 
-        // Remove the flag in localStorage
-        localStorage.removeItem("pageLoaded");
+          // Redirect to a link when session is cleared
+          location.href = "../login.html";
+        }
 
-        // Redirect to a link when session is cleared
-        location.href = "../login.html";
-      }
+        if (username == null || name == null) {
+          location.href = "../login.html";
+        }
+      });
     </script>
   </body>
 </html>

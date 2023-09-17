@@ -1,3 +1,4 @@
+localStorage.removeItem("pageLoaded");
 const firebaseConfig = {
   apiKey: "AIzaSyAhOHX1_eL1X5WO8_q8jRWDqw1WrGOp3ow",
   authDomain: "techso-6df95.firebaseapp.com",
