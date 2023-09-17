@@ -51,19 +51,21 @@ function q1() {
                     // Check if this user's folder has a matching username
                     const userData = userSnapshot.val();
                     if (userData.username && userData.username.toLowerCase() === username) {
-                      // Push the data into the matching user's folder
+                      // Update the data for the matching user
                       var txtar = document.getElementById("txtar").value;
                       const dataToPush = {
-                        al1: txtar, // Replace with the text data you want to push
+                        set: s,
+                        al1: txtar,
+                        index: 1, // Replace with the index value you want to push
                       };
                       userRef
                         .child(userKey)
-                        .push(dataToPush)
+                        .update(dataToPush)
                         .then(() => {
-                          console.log(`Data pushed for username: ${username} in folder: ${userKey}`);
+                          console.log(`Data updated for username: ${username} in folder: ${userKey}`);
                         })
                         .catch((error) => {
-                          console.error(`Error pushing data for username ${username}: ${error}`);
+                          console.error(`Error updating data for username ${username}: ${error}`);
                         });
                     }
                   });
@@ -310,6 +312,7 @@ function q5() {
               .catch(function (error) {
                 console.error("Error querying data: " + error);
               });
+            q6();
           });
         });
       }
@@ -317,5 +320,40 @@ function q5() {
     .catch(function (error) {
       console.error("Error fetching data: " + error);
     });
+}
+function q6() {
   location.href = "../index.html";
 }
+// timer engine
+let timerInterval;
+let timeInSeconds = 150; // 25 minutes
+
+// Function to update the timer display
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeInSeconds / 60);
+  const seconds = timeInSeconds % 60;
+  const timerDisplay = `Refreshing the page will cancel your test. Timeleft: ${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  document.getElementById("timer").textContent = timerDisplay;
+}
+
+// Function to start the timer
+function startTimer() {
+  timerInterval = setInterval(function () {
+    timeInSeconds--;
+    updateTimerDisplay();
+    if (timeInSeconds === 0) {
+      clearInterval(timerInterval);
+      alert("Timer has reached 25 minutes!");
+      confirm("Time is over, Press OK!");
+    }
+  }, 1000); // Update every 1 second
+}
+updateTimerDisplay();
+window.addEventListener("load", startTimer);
+
+const textarea = document.querySelector("textarea");
+
+textarea.addEventListener("paste", function (e) {
+  e.preventDefault();
+  confirm("Only editing & writing is allowed");
+});

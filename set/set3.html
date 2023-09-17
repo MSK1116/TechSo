@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="By Student for Student! We are open to everyone, join us now" />
     <link rel="icon" type="image/x-icon" href="../IMG Dir/Logo 1.png" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
     <style>
       #loading-screen {
@@ -20,6 +22,9 @@
         background-color: #fff; /* You can customize the background color */
         z-index: 9999; /* Adjust the z-index to ensure it appears above other elements */
         /* Add any other styling you desire */
+      }
+      h5 {
+        text-align: center;
       }
 
       #loading-content {
@@ -53,7 +58,7 @@
       });
     </script>
 
-    <title>Set 3-TechSo Net</title>
+    <title>Set 1-TechSo Net</title>
 
     <!-- STYLE DIR-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -94,10 +99,42 @@
         <div style="display: flex; justify-content: center; margin-bottom: 0px">
           <img class="glowing-bulb" style="margin-top: 40px; height: 200px" src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" /><br />
         </div>
+        <div class="stopwatch-container" id="timer">25:00</div>
+
         <h4 class="text-center text-primary">
-          <strong><br />Everest TechSo Network</strong>
+          <strong><br />Set-2</strong>
         </h4>
         <h5 class="text-center fw-bold text-warning" id="uName"></h5>
+        <div class="card mb-4 mr-4 ml-4 shadow p-2">
+          <div class="card-header text-center text-danger">Refreshing the page will cancel your test.</div>
+          <div class="card-body text-center justify-content-center">
+            <div id="q1">
+              <h5 sIndex="3" id="dispQue">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar"></textarea>
+              <button class="btn btn-info" id="subq1">Submit & Next</button>
+            </div>
+            <div id="q2">
+              <h5 sIndex="3" id="dispQue2">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar2"></textarea>
+              <button class="btn btn-info" id="subq2">Submit & Next</button>
+            </div>
+            <div id="q3">
+              <h5 sIndex="3" id="dispQue3">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar3"></textarea>
+              <button class="btn btn-info" id="subq3">Submit & Next</button>
+            </div>
+            <div id="q4">
+              <h5 sIndex="3" id="dispQue4">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar4"></textarea>
+              <button class="btn btn-info" id="subq4">Submit & Next</button>
+            </div>
+            <div id="q5">
+              <h5 sIndex="3" id="dispQue5">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar5"></textarea>
+              <button class="btn btn-info" id="subq5">Submit</button>
+            </div>
+          </div>
+        </div>
 
         <!-- loading screen -->
         <div id="loading-screen">
@@ -140,6 +177,9 @@
         } else {
           // Set the pageLoaded flag to true in localStorage
           localStorage.setItem("pageLoaded", "true");
+          location.href = "../login.html";
+        }
+        if (username == null || name == null) {
           location.href = "../login.html";
         }
       });

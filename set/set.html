@@ -208,8 +208,8 @@
           // Redirect to a link when session is cleared
           location.href = "../login.html";
         }
-
-        if (username == null || name == null) {
+        var set1 = localStorage.getItem("set");
+        if (username == null || name == null || set1 == "true") {
           location.href = "../login.html";
         }
       });
