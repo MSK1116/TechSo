@@ -326,7 +326,7 @@ function q6() {
 }
 // timer engine
 let timerInterval;
-let timeInSeconds = 150; // 25 minutes
+let timeInSeconds = 1500; // 25 minutes
 
 // Function to update the timer display
 function updateTimerDisplay() {
