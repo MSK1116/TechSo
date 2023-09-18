@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const loginForm = document.getElementById("login-form");
 const messageDiv = document.getElementById("message");
 const dataToPush = {index: 1};
-const usersRef = firebase.database().ref(`users`);
+const usersRef = firebase.database().ref(`user-try`);
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const username = document.getElementById("username").value;
@@ -30,7 +30,7 @@ loginForm.addEventListener("submit", function (e) {
       var user = Object.values(userData)[0];
       if (userData) {
         // User found, check the password
-        if (user.index == 1) {
+        if (user.index == 1 || user.master == "true") {
           messageDiv.innerHTML = "You have reached login limit, Try contacting to TechSo for recovery";
           document.getElementById("tolog").style.display = "none";
         }
@@ -38,17 +38,17 @@ loginForm.addEventListener("submit", function (e) {
         else if (user.password === password) {
           // Password is correct
 
-          messageDiv.innerHTML = `You're registered ${user.name}!`;
+          messageDiv.innerHTML = `You're being redirected to set, ${user.name}!`;
           sessionStorage.setItem("username1", user.username);
           sessionStorage.setItem("password1", user.password);
           sessionStorage.setItem("name1", user.name);
-        
+          location.href = "../set/set.html";
         } else {
           messageDiv.innerHTML = "Incorrect Password, Retry";
           document.getElementById("tolog").style.display = "none";
         }
       } else {
-        messageDiv.innerHTML = "No such participate found. Try changing username ";
+        messageDiv.innerHTML = "No such participate found.";
         document.getElementById("tolog").style.display = "none";
       }
     });

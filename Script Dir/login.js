@@ -30,7 +30,7 @@ loginForm.addEventListener("submit", function (e) {
       var user = Object.values(userData)[0];
       if (userData) {
         // User found, check the password
-        if (user.index == 1 || user.master=="true") {
+        if (user.index == 1 && user.master !== "true") {
           messageDiv.innerHTML = "You have reached login limit, Try contacting to TechSo for recovery";
           document.getElementById("tolog").style.display = "none";
         }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="By Student for Student! We are open to everyone, join us now" />
+    <link rel="icon" type="image/x-icon" href="./IMG Dir/Logo 1.png" />
+
+    <style>
+      #loading-screen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff; /* You can customize the background color */
+        z-index: 9999; /* Adjust the z-index to ensure it appears above other elements */
+        /* Add any other styling you desire */
+      }
+
+      #loading-content {
+        text-align: center;
+      }
+
+      /* Styles for the glowing bulb */
+      .glowing-bulb {
+        height: 250px;
+        background: radial-gradient(circle, rgba(255, 255, 0, 0.8) 0%, rgba(255, 255, 0, 0) 70%);
+        border-radius: 50%;
+        animation: glow 2s infinite alternate;
+      }
+
+      /* Keyframes for the glowing animation */
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+          transform: translateY(0);
+        }
+        100% {
+          box-shadow: 0 0 40px rgba(255, 255, 0, 0.8);
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+
+    <title>Login-TechSo Network</title>
+
+    <!-- STYLE DIR-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link href="Style Dir/style1.css" rel="stylesheet" />
+    <link href="Style Dir/database.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+
+    <style>
+      #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #044cac;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        overflow: hidden;
+      }
+    </style>
+    <!-- END OF STYLE DIR-->
+  </head>
+
+  <body id="page-top">
+    <div id="particles-js" class="row justify-content-center">
+      <div class="col-xl-5 mr-2 ml-2 col-lg-1 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="col-lg-46">
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                </div>
+                <form id="login-form" class="user">
+                  <div class="form-group">
+                    <input type="text" id="username" class="form-control form-control-user" placeholder="Enter username..." required />
+                  </div>
+                  <div class="form-group">
+                    <input type="password" id="password" class="form-control form-control-user" placeholder="Password" required />
+                  </div>
+                  <div id="message"></div>
+                  <button class="btn btn-primary btn-user btn-block" type="submit">Login</button>
+                </form>
+                <h6 class="text-center mt-4 text-primary">You can only login after program starts</h6>
+                <h6 style="display: none" id="tolog" class="text-center mt-4 text-danger">Checking Mold Skill server for data....</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Script Dir/login-admin.js"></script>
+    <script>
+      sessionStorage.clear();
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+            image: {
+              src: "img/github.svg",
+              width: 100,
+              height: 100,
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+  </body>
+</html>

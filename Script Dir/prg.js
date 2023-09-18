@@ -21,7 +21,7 @@ var dispQue4 = document.getElementById("dispQue4");
 var dispQue5 = document.getElementById("dispQue5");
 // Reference to the "Question" node in the database
 const questionsRef = firebase.database().ref("Question");
-var s = document.getElementById("dispQue").getAttribute("sIndex");
+var s = document.getElementById("getSet").getAttribute("sIndex");
 const userRef = firebase.database().ref("user-try");
 
 q1();

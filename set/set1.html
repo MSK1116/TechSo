@@ -1,211 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="By Student for Student! We are open to everyone, join us now" />
+    <link rel="icon" type="image/x-icon" href="../IMG Dir/Logo 1.png" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="By Student for Student! We are open to everyone, join us now" />
-  <link rel="icon" type="image/x-icon" href="../IMG Dir/Logo 1.png" />
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
-  <style>
-    #loading-screen {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      /* You can customize the background color */
-      z-index: 9999;
-      /* Adjust the z-index to ensure it appears above other elements */
-      /* Add any other styling you desire */
-    }
-
-    h5 {
-      text-align: center;
-      -webkit-user-select: none !important;
-      -moz-user-select: none !important;
-      -ms-user-select: none !important;
-      user-select: none !important;
-    }
-
-    #loading-content {
-      text-align: center;
-    }
-
-    
-
-    /* Styles for the glowing bulb */
-    .glowing-bulb {
-      height: 250px;
-      background: radial-gradient(circle, rgba(255, 255, 0, 0.8) 0%, rgba(255, 255, 0, 0) 70%);
-      border-radius: 50%;
-      animation: glow 2s infinite alternate;
-    }
-
-    /* Keyframes for the glowing animation */
-    @keyframes glow {
-      0% {
-        box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
-        transform: translateY(0);
+    <style>
+      #loading-screen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        /* You can customize the background color */
+        z-index: 9999;
+        /* Adjust the z-index to ensure it appears above other elements */
+        /* Add any other styling you desire */
       }
 
-      100% {
-        box-shadow: 0 0 40px rgba(255, 255, 0, 0.8);
-        transform: translateY(-10px);
+      h5 {
+        text-align: center;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
       }
-    }
-  </style>
-  <script>
-    window.addEventListener("load", function () {
-      var loadingScreen = document.getElementById("loading-screen");
-      loadingScreen.style.display = "none";
-    });
-  </script>
 
-  <title>Set 1-TechSo Net</title>
+      #loading-content {
+        text-align: center;
+      }
 
-  <!-- STYLE DIR-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet" />
-  <link href="../Style Dir/style1.css" rel="stylesheet" />
-  <link href="../Style Dir/database.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <style>
-    .container2-tb {
-      background-image: url(https://i.postimg.cc/65JRcRYc/board.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  </style>
-  <!-- END OF STYLE DIR-->
-</head>
+      /* Styles for the glowing bulb */
+      .glowing-bulb {
+        height: 250px;
+        background: radial-gradient(circle, rgba(255, 255, 0, 0.8) 0%, rgba(255, 255, 0, 0) 70%);
+        border-radius: 50%;
+        animation: glow 2s infinite alternate;
+      }
 
-<body id="page-top">
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="flex-column">
-      <!-- Main Content -->
+      /* Keyframes for the glowing animation */
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+          transform: translateY(0);
+        }
 
-      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <ul class="navbar-nav ml-auto">
-          <li class="no-arrow nav-icon">
-            <a title="icon " href="../index.html" class="btn mr-3 btn-danger btn-icon-split">
-              <span class="icon text-white-50"> <i class="fas fa-times"></i></span>
-              <span class="text fw-bold">Leave Competition</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div style="display: flex; justify-content: center; margin-bottom: 0px">
-        <img class="glowing-bulb" style="margin-top: 40px; height: 200px"
-          src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" /><br />
-      </div>
+        100% {
+          box-shadow: 0 0 40px rgba(255, 255, 0, 0.8);
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        var loadingScreen = document.getElementById("loading-screen");
+        loadingScreen.style.display = "none";
+      });
+    </script>
 
-      <h4 class="text-center text-primary">
-        <strong><br />Set-1</strong>
-      </h4>
-      <h5 class="text-center fw-bold text-warning" id="uName"></h5>
-      <div class="card mb-4 mr-4 ml-4 shadow p-2">
-        <div class="text-center card-header text-danger" id="timer">25:00</div>
-        <div class="card-body justify-content-center">
-          <div id="q1">
-            <h5 sIndex="1" class="text-justify" id="dispQue">loading..</h5>
-            <hr />
-            <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..."
-              id="txtar"></textarea>
-            <button class="btn btn-info" id="subq1">Submit & Next</button>
+    <title>Set 1-TechSo Net</title>
+
+    <!-- STYLE DIR-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link href="../Style Dir/style1.css" rel="stylesheet" />
+    <link href="../Style Dir/database.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+      .container2-tb {
+        background-image: url(https://i.postimg.cc/65JRcRYc/board.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    <!-- END OF STYLE DIR-->
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="flex-column">
+        <!-- Main Content -->
+
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <ul class="navbar-nav ml-auto">
+            <li class="no-arrow nav-icon">
+              <a title="icon " href="../index.html" class="btn mr-3 btn-danger btn-icon-split">
+                <span class="icon text-white-50"> <i class="fas fa-times"></i></span>
+                <span class="text fw-bold">Leave Competition</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div style="display: flex; justify-content: center; margin-bottom: 0px">
+          <img class="glowing-bulb" style="margin-top: 40px; height: 200px" src="https://i.postimg.cc/BnwF2vK2/Logo-1.png" /><br />
+        </div>
+
+        <h4 class="text-center text-primary">
+          <strong><br />Set-1</strong>
+        </h4>
+        <h5 class="text-center fw-bold text-warning" id="uName"></h5>
+        <div class="card mb-4 mr-4 ml-4 shadow p-2">
+          <div class="text-center card-header text-danger" id="timer">25:00</div>
+          <div sIndex="1" id="getSet" class="card-body justify-content-center">
+            <div id="q1">
+              <h5 class="text-justify" id="dispQue">loading..</h5>
+              <hr />
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar"></textarea>
+              <button class="btn btn-info" id="subq1">Submit & Next</button>
+            </div>
+            <div id="q2">
+              <h5 class="text-justify" id="dispQue2">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar2"></textarea>
+              <button class="btn btn-info" id="subq2">Submit & Next</button>
+            </div>
+            <div id="q3">
+              <h5 class="text-justify" id="dispQue3">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar3"></textarea>
+              <button class="btn btn-info" id="subq3">Submit & Next</button>
+            </div>
+            <div id="q4">
+              <h5 class="text-justify" id="dispQue4">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar4"></textarea>
+              <button class="btn btn-info" id="subq4">Submit & Next</button>
+            </div>
+            <div id="q5">
+              <h5 class="text-justify" id="dispQue5">loading..</h5>
+              <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..." id="txtar5"></textarea>
+              <button class="btn btn-info" id="subq5">Submit</button>
+            </div>
           </div>
-          <div id="q2">
-            <h5 sIndex="1" class="text-justify" id="dispQue2">loading..</h5>
-            <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..."
-              id="txtar2"></textarea>
-            <button class="btn btn-info" id="subq2">Submit & Next</button>
-          </div>
-          <div id="q3">
-            <h5 sIndex="1" class="text-justify" id="dispQue3">loading..</h5>
-            <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..."
-              id="txtar3"></textarea>
-            <button class="btn btn-info" id="subq3">Submit & Next</button>
-          </div>
-          <div id="q4">
-            <h5 sIndex="1" class="text-justify" id="dispQue4">loading..</h5>
-            <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..."
-              id="txtar4"></textarea>
-            <button class="btn btn-info" id="subq4">Submit & Next</button>
-          </div>
-          <div id="q5">
-            <h5 sIndex="1" class="text-justify" id="dispQue5">loading..</h5>
-            <textarea class="form-control form-control-user mb-3" placeholder="Place your code here..."
-              id="txtar5"></textarea>
-            <button class="btn btn-info" id="subq5">Submit</button>
+        </div>
+
+        <!-- loading screen -->
+        <div id="loading-screen">
+          <div id="loading-content">
+            <h4>SET-1</h4>
+            <!-- Add loading animations or text here -->
+            <img style="height: 400px; width: 400px" src="../IMG Dir/Logo 1.png" />
+            <h5>Serving Knowledge via society<br />Loading...</h5>
           </div>
         </div>
       </div>
 
-      <!-- loading screen -->
-      <div id="loading-screen">
-        <div id="loading-content">
-          <h4>SET-1</h4>
-          <!-- Add loading animations or text here -->
-          <img style="height: 400px; width: 400px" src="../IMG Dir/Logo 1.png" />
-          <h5>Serving Knowledge via society<br />Loading...</h5>
-        </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <footer class="sticky-footer">
+      <div>
+        <p class="copyright">
+          Sole property of MOld SKILL any query and suggestion can be sumbmitted through main website <br />
+          Contact: contact@msmahato.com.np <br />
+          Adress: Bhaktapur-Nepal <br />
+          Copyright &copy;(2023-025)
+        </p>
       </div>
-    </div>
+    </footer>
+    <!-- End of Page Wrapper -->
 
-    <!-- End of Content Wrapper -->
-  </div>
-  <footer class="sticky-footer">
-    <div>
-      <p class="copyright">
-        Sole property of MOld SKILL any query and suggestion can be sumbmitted through main website <br />
-        Contact: contact@msmahato.com.np <br />
-        Adress: Bhaktapur-Nepal <br />
-        Copyright &copy;(2023-025)
-      </p>
-    </div>
-  </footer>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-rocket"></i>
+    </a>
+    <script src="../Script Dir/prg.js"></script>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-rocket"></i>
-  </a>
-  <script src="../Script Dir/prg.js"></script>
+    <script>
+      document.getElementById("uName").innerHTML = "Dear, " + name;
 
-  <script>
-    document.getElementById("uName").innerHTML = "Dear, " + name;
-
-    document.addEventListener("DOMContentLoaded", function () {
-      // Check if the pageLoaded flag is set to true in localStorage
-      if (localStorage.getItem("pageLoaded") === "true") {
-        localStorage.removeItem("pageLoaded");
-      } else {
-        // Set the pageLoaded flag to true in localStorage
-        localStorage.setItem("pageLoaded", "true");
-        location.href = "../login.html";
-      }
-      if (username == null || name == null) {
-        location.href = "../login.html";
-      }
-    });
-  </script>
-  <script>
-    localStorage.setItem("set", "true");
-  </script>
-</body>
-
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if the pageLoaded flag is set to true in localStorage
+        if (localStorage.getItem("pageLoaded") === "true") {
+          localStorage.removeItem("pageLoaded");
+        } else {
+          // Set the pageLoaded flag to true in localStorage
+          localStorage.setItem("pageLoaded", "true");
+          location.href = "../login.html";
+        }
+        if (username == null || name == null) {
+          location.href = "../login.html";
+        }
+      });
+    </script>
+    <script>
+      localStorage.setItem("set", "true");
+    </script>
+  </body>
 </html>
