@@ -343,8 +343,8 @@ function startTimer() {
     updateTimerDisplay();
     if (timeInSeconds === 0) {
       clearInterval(timerInterval);
-      alert("Timer has reached 25 minutes!");
       confirm("Time is over, Press OK!");
+      location.href = "../login.html";
     }
   }, 1000); // Update every 1 second
 }
