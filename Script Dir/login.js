@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const loginForm = document.getElementById("login-form");
 const messageDiv = document.getElementById("message");
 const dataToPush = {index: 1};
-const usersRef = firebase.database().ref(`user-try`);
+const usersRef = firebase.database().ref(`users`);
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const username = document.getElementById("username").value;
@@ -30,7 +30,7 @@ loginForm.addEventListener("submit", function (e) {
       var user = Object.values(userData)[0];
       if (userData) {
         // User found, check the password
-        if (user.index == 1 && user.master !== "true") {
+        if (user.index == 1) {
           messageDiv.innerHTML = "You have reached login limit, Try contacting to TechSo for recovery";
           document.getElementById("tolog").style.display = "none";
         }
