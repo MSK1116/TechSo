@@ -46,6 +46,7 @@ loginForm.addEventListener("submit", function (e) {
         } else {
           messageDiv.innerHTML = "Incorrect Password, Retry";
           document.getElementById("tolog").style.display = "none";
+          document.getElementById("tolog1").style.display = "block";
         }
       } else {
         messageDiv.innerHTML = "No such participate found.";
