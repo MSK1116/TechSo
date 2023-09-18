@@ -18,6 +18,7 @@ const dataToPush = {index: 1};
 const usersRef = firebase.database().ref(`users`);
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
+  location.href = "../index.html";
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   document.getElementById("tolog").style.display = "block";
