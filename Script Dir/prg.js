@@ -56,7 +56,7 @@ function q1() {
                       const dataToPush = {
                         set: s,
                         al1: txtar,
-                        index: 0, // Replace with the index value you want to push
+                        index: 1, // Replace with the index value you want to push
                       };
                       userRef
                         .child(userKey)
