@@ -88,7 +88,7 @@
                 </a>
               </li>
               <li class="no-arrow nav-icon">
-                <a href="./register.html" class="btn btn-info btn-icon-split">
+                <a onclick="alert('We are not accepting now.')" class="btn btn-info btn-icon-split">
                   <span class="text fw-bold">Register Now!</span>
                 </a>
               </li>
@@ -109,12 +109,11 @@
             <img class="mb-4" src="./IMG Dir/poster 2.jpeg" />
             <a
               title="icon"
-              href="./register.html"
+              onclick="alert('We are not accepting now.')"
               class="btn btn-danger btn-icon-split"
               style="display: flex; justify-content: center; align-items: center; width: 30%; height: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto">
               <span class="text fw-bold"> Register Now</span>
             </a>
-            <div class="text-warning text-center fw-bold" id="timeLeft"></div>
           </div>
           <div class="rules-container card">
             <h2 class="text-primary fw-bold">You Should Know!</h2>
@@ -408,28 +407,7 @@
         });
       });
     </script>
-    <script>
-      // Set the target date (replace with your desired date)
-      const targetDate = new Date("2023-09-18T17:30:00");
 
-      // Function to calculate and display the time left
-      function calculateTimeLeft() {
-        const currentDate = new Date();
-        const timeDifference = targetDate - currentDate;
-
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-
-        document.getElementById("timeLeft").innerHTML = `Time Left: ${days} days ${hours} hours ${minutes} minutes`;
-      }
-
-      // Call the function to initially display the time left
-      calculateTimeLeft();
-
-      // Update the time left every second
-      setInterval(calculateTimeLeft, 1000);
-    </script>
     <!-- Asked by console for the jquery requirement -->
     <script src="./Script Dir/script.js"></script>
     <script src="./Script Dir/database.js"></script>
